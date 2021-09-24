@@ -168,47 +168,6 @@ class NewsQuery extends BaseQuery{
         return $data;
     }
 
-/*
-    private function getByType($lang,$type="basic",$limit=4){
-        $data=$this->find()
-        ->select([
-            'news.id',
-            'news.public_date',
-            'news.created_date',
-            'news.count_of_view',
-            'news.thumbnail_image',
-            'news.category_id',
-            'category.created_date',
-            'news_content.alias',
-            'news_content.title',
-            'news_content.link_year',
-            'news_content.link_month',
-            'news_content.link_day',
-            'news_content.short_content',
-        ])
-        ->joinWith([
-            'newsContents'=>function($query) use($lang){
-                $query->andWhere(['news_content.lang'=>$lang]);
-            },
-        ])
-        ->joinWith([
-            "categorys"=>function($query) use($lang){
-                $query->joinWith([
-                    'categoryContents'=>function($query) use($lang){
-                        $query->andWhere(['category_content.lang'=>$lang]);
-                    }
-                ]);
-            },
-        ])
-        ->where([
-            'news.is_deleted'=>0,
-            'news.type'=>$type,
-        ])
-        ->limit($limit)
-        ->all();
-        return $data;
-    }
-*/
 
 
     private function t($category_slug,$id,$limit=5){
