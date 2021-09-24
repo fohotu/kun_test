@@ -16,9 +16,7 @@ class SideBar extends Widget{
 
     public function init(){
         parent::init();
-        /*if(!$this->data && is_array($this->data)){
-            $this->data=[];
-        }*/
+       
     }
     
     public function run(){
