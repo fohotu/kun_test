@@ -16,8 +16,8 @@ use yii\helpers\Url;
                                  
                                     if(isset($news->newsContents[0])){
                                         $dataNews=$news->newsContents[0];
-                                        $date=Date("H:i / d.m.Y",$news->created_date);
-                                        $link="news/".$dataNews['link_year']."/".$dataNews['link_month']."/".$dataNews['link_day']."/".$dataNews['alias'];
+                                        $date=$news->getDateForView();
+                                        $link="news/".$dataNews->getSlug();
                                        
                        ?>
 
